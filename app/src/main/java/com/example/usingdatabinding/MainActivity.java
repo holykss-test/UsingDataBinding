@@ -4,6 +4,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.usingdatabinding.databinding.ActivityMainBinding;
@@ -46,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
                 customer.earlyBird = b.checkEarlyBird.isChecked();
 
                 saveCustomerToDb(customer);
+            }
+        });
+
+        b.buttonTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                b.getModel().name.set("TEST NAME");
             }
         });
     }
